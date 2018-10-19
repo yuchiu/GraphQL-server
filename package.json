@@ -1,27 +1,100 @@
 {
-  "name": "server",
+  "name": "graphql-server-boilerplate",
   "version": "0.0.1",
   "description": "Awesome project developed with TypeORM.",
-  "dependencies": {
-    "graphql-import": "^0.6.0",
-    "graphql-yoga": "^1.14.12",
-    "pg": "^7.4.3",
-    "reflect-metadata": "^0.1.12",
-    "typeorm": "0.2.7",
-    "uuid": "^3.3.2"
-  },
   "devDependencies": {
-    "@types/node": "^10.5.4",
+    "@types/bcryptjs": "^2.4.1",
+    "@types/node": "^9.6.6",
     "@types/uuid": "^3.4.3",
-    "gql2ts": "^1.8.1",
-    "nodemon": "^1.18.3",
-    "ts-node": "7.0.0",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.14.0",
-    "typescript": "2.9.2"
+    "gql2ts": "^1.7.2",
+    "nodemon": "^1.17.3",
+    "ts-node": "6.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.12.0",
+    "typescript": "2.8.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "graphql-import": "^0.5.0",
+    "graphql-yoga": "^1.9.2",
+    "pg": "^7.4.1",
+    "reflect-metadata": "^0.1.12",
+    "typeorm": "0.2.0",
+    "uuid": "^3.2.1"
   },
   "scripts": {
     "start": "nodemon --exec ts-node src/index.ts",
     "gen-schema-types": "gql2ts src/schema.graphql -o src/types/schema.d.ts"
+  },
+  "tslintConfig": {
+    "defaultSeverity": "error",
+    "extends": [
+      "tslint:latest",
+      "tslint-config-prettier"
+    ],
+    "jsRules": {},
+    "rules": {
+      "member-access": false,
+      "object-literal-sort-keys": false,
+      "ordered-imports": false,
+      "interface-name": false,
+      "class-name": true,
+      "comment-format": [
+        true,
+        "check-space"
+      ],
+      "indent": [
+        true,
+        "spaces"
+      ],
+      "one-line": [
+        true,
+        "check-open-brace",
+        "check-whitespace"
+      ],
+      "no-var-keyword": true,
+      "quotemark": [
+        true,
+        "double",
+        "avoid-escape"
+      ],
+      "semicolon": [
+        true,
+        "always",
+        "ignore-bound-class-methods"
+      ],
+      "whitespace": [
+        true,
+        "check-branch",
+        "check-decl",
+        "check-operator",
+        "check-module",
+        "check-separator",
+        "check-type"
+      ],
+      "typedef-whitespace": [
+        true,
+        {
+          "call-signature": "nospace",
+          "index-signature": "nospace",
+          "parameter": "nospace",
+          "property-declaration": "nospace",
+          "variable-declaration": "nospace"
+        },
+        {
+          "call-signature": "onespace",
+          "index-signature": "onespace",
+          "parameter": "onespace",
+          "property-declaration": "onespace",
+          "variable-declaration": "onespace"
+        }
+      ],
+      "no-internal-module": true,
+      "no-trailing-whitespace": true,
+      "no-null-keyword": true,
+      "prefer-const": true,
+      "jsdoc-format": true
+    },
+    "rulesDirectory": []
   }
 }
